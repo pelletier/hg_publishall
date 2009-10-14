@@ -1,0 +1,20 @@
+syntax: glob
+
+*.pyc
+*~
+*.db
+*.tmp
+.DS_Store
+*.sqlite
+*.svn
+*.orig
+*.old
+*.sqlite3
+*.kpf
+settings.py
+public
+favicon.ico
+initial_data.json
+*._*
+hg
+
