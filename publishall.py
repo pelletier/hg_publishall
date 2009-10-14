@@ -25,15 +25,16 @@ def pushall(hg_ui, repo):
     ini.read(userrc)
     repos = None
     if not os.path.exists(userrc):
-        hg_ui.warn("Unable to find your hgrc file for the current repository.")
+        hg_ui.warn(\
+            _("Unable to find your hgrc file for the current repository."))
         return 1
     try:
         repos = ini.items('paths')
     except KeyError:
-        hg_ui.warn("No paths defined in your hgrc. Pushall aborded.")
-    hg_ui.status("%s paths found" % len(repos))
+        hg_ui.warn(_("No paths defined in your hgrc. Pushall aborded."))
+    hg_ui.status(_("%s paths found" % len(repos)))
     for path in repos:
-        hg_ui.status("Pushing to %s" % path[0])
+        hg_ui.status(_("Pushing to %s" % path[0]))
         commands.push(hg_ui, repo, path[1])
     return 0
 
