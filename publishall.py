@@ -34,19 +34,19 @@ def pushall(ui, repo, **opts):
     ui.status("%s paths found\n" % len(repos))
     for path in repos:
         ui.status("* pushing to %s\n" % path[0])
-        commands.push(ui, repo, path[1], None, opts)
+        commands.push(ui, repo, path[1], **opts)
     return 0
 
-cmdtable = {
-    'pusha': (
-        pushall,
-        [],
-        _("Push to all your repositories.\n"),
-    ),
+aliases = ('pusha','pushall')
 
-    'pushall': (
-        pushall,
-        [],
-        _("Push to all your repositories (the same as pusha).\n")
-    )
-}
+command = (
+    pushall,
+    [],
+    _("Push to all your repositories.\n"),
+)
+
+cmdtable = {}
+
+# Because I'm SO lazy
+for item in aliases:
+    cmdtable[item] = command
