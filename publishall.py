@@ -4,7 +4,6 @@
 
 Requirements:
 mercurial
-iniparse: http://iniparse.googlecode.com/files/iniparse-0.3.1.tar.gz
 
 Use:
 hg pusha
@@ -19,7 +18,7 @@ from mercurial.i18n import _
 from mercurial import commands, cmdutil, exntesions, hg, util
 import ConfigParser, os
 
-def pushall(ui, repo):
+def pushall(ui, repo, **opts):
     """The Publishall core function. Makes your life easier."""
     userrc = os.sep.join([repo.root, '.hg', 'hgrc'])
     ini = ConfigParser.RawConfigParser()
@@ -35,7 +34,7 @@ def pushall(ui, repo):
     ui.status("%s paths found\n" % len(repos))
     for path in repos:
         ui.status("* pushing to %s\n" % path[0])
-        commands.push(ui, repo, path[1])
+        commands.push(ui, repo, path[1], None, opts)
     return 0
 
 cmdtable = {
