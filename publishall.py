@@ -15,7 +15,7 @@ publishall = /path/to/publishall.py
 """
 
 from mercurial.i18n import _
-from mercurial import commands, cmdutil, exntesions, hg, util
+from mercurial import commands, cmdutil, extensions, hg, util
 import ConfigParser, os
 
 def pushall(ui, repo, **opts):
@@ -34,7 +34,10 @@ def pushall(ui, repo, **opts):
     ui.status("%s paths found\n" % len(repos))
     for path in repos:
         ui.status("* pushing to %s\n" % path[0])
-        commands.push(ui, repo, path[1], **opts)
+        try:
+            commands.push(ui, repo, path[1], **opts)
+        except Exception, e:
+            print e
     return 0
 
 aliases = ('pusha','pushall')
