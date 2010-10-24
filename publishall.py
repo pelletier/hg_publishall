@@ -20,17 +20,9 @@ import ConfigParser, os
 
 def pushall(ui, repo, **opts):
     """The Publishall core function. Makes your life easier."""
-    userrc = os.sep.join([repo.root, '.hg', 'hgrc'])
-    ini = ConfigParser.RawConfigParser()
-    ini.read(userrc)
-    repos = None
-    if not os.path.exists(userrc):
-        ui.warn("Unable to find your hgrc file for the current repository.\n")
-        return 1
-    try:
-        repos = ini.items('paths')
-    except KeyError:
-        ui.warn("No paths defined in your hgrc. Pushall aborded.\n")
+    repos = ui.configitems('paths')
+    if not repos:
+        ui.warn("No paths defined in your hgrc. Pushall aborted.\n")
     ui.status("%s paths found\n" % len(repos))
     for path in repos:
         ui.status("* pushing to %s\n" % path[0])
