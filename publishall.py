@@ -1,17 +1,22 @@
 #!/usr/bin/env python
 
-"""allows you to publish on all your repositories.
+"""Allows you to publish on all your repositories.
 
 Requirements:
-mercurial
+    mercurial
 
 Use:
-hg pusha
-You can also use hg pushall
+    hg pusha
+    You can also use hg pushall
 
 Installation:
-Add the following entry to the [extensions] bloc of your .hg/hgrc config.
-publishall = /path/to/publishall.py
+    Add the following entry to the [extensions] part of your .hg/hgrc config:
+        publishall = /path/to/publishall.py
+
+License:
+    MIT (see LICENSE).
+
+For more information, please read the README.markdown file.
 """
 
 from mercurial.i18n import _
