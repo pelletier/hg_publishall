@@ -10,12 +10,12 @@ Installation
 
 First, clone the repository, let's say in your home directory:
 
-    hg clone ssh://hg@bitbucket.org/Kizlum/hg-publishall ~/hg-publishall
+    hg clone ssh://hg@bitbucket.org/pelletier/hg-publishall ~/hg-publishall
 
-Then add the following to your .hgrc file in order to activate the extension:
+Then add the following to your `.hgrc` file in order to activate the extension:
 
     [extensions]
-    publishall = /Users/thomas/code/hg-publishall/hg-publishall/publishall.py
+    publishall = /Users/thomas/hg-publishall/publishall.py
 
 And voilà!
 
@@ -33,7 +33,7 @@ Options
 
 As of [r10](https://bitbucket.org/pelletier/hg-publishall/changeset/03300c2a1121)
 you can now pass `--new-branch` to the command in order to create remote
-branches.
+branches. Here is an example session:
 
     hg init base
     hg init target1
