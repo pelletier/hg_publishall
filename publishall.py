@@ -41,7 +41,7 @@ aliases = ('pusha','pushall')
 
 command = (
     pushall,
-    [],
+     [('', 'new-branch', None, 'pushes with new branch(es)')],
     _("Push to all your repositories.\n"),
 )
 
