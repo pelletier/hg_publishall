@@ -31,9 +31,9 @@ want to push, use one of the following:
 Options
 -------
 
-* As of [r10](https://bitbucket.org/pelletier/hg-publishall/changeset/03300c2a1121)
-  you can now pass `--new-branch` to the command in order to create remote
-  branches.
+As of [r10](https://bitbucket.org/pelletier/hg-publishall/changeset/03300c2a1121)
+you can now pass `--new-branch` to the command in order to create remote
+branches.
 
     hg init base
     hg init target1
