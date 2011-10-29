@@ -35,19 +35,19 @@ Options
   you can now pass `--new-branch` to the command in order to create remote
   branches.
 
-	hg init base
-	hg init target1
-	hg init target2
-	echo -e "[paths]\ntarget1=../target1\ntarget2=../target2" > base/.hg/hgrc
-	cd base
-	touch bar
-	hg commit -A -m "first commit on default"
-	hg pushall
-	hg branch newbranch
-	touch foo
-	hg commit -A -m "create a new branch"
-	hg pushall # This fails
-	hg pushall --new-branch
+    hg init base
+    hg init target1
+    hg init target2
+    echo -e "[paths]\ntarget1=../target1\ntarget2=../target2" > base/.hg/hgrc
+    cd base
+    touch bar
+    hg commit -A -m "first commit on default"
+    hg pushall
+    hg branch newbranch
+    touch foo
+    hg commit -A -m "create a new branch"
+    hg pushall # This fails
+    hg pushall --new-branch
 
 Tips
 ----
